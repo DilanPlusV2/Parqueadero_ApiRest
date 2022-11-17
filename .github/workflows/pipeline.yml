@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: sudo npm install --unsafe-perm=true --allow-root
+        run: npm install
       - name: Lint
         run: npm run eslint
       - name: Build
