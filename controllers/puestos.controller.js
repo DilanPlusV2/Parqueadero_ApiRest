@@ -32,6 +32,10 @@ function update(req, res){
     });
 }
 
+/*module.exports = {
+    index:index,
+    update:update
+}*/
 module.exports = {
     index:index,
     update:update
