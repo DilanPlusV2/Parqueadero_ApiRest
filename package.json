@@ -18,5 +18,9 @@
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.20",
     "sequelize": "^6.25.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DilanPlusV2/Parqueadero_ApiRest.git"
   }
 }

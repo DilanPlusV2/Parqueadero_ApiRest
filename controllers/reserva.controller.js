@@ -1,5 +1,4 @@
 const { where } = require('sequelize');
-const { response } = require('../app');
 const models = require('../models');
 const reserva = require('../models/reserva');
 

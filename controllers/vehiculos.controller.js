@@ -1,4 +1,3 @@
-const { response } = require('../app');
 const models = require('../models');
 const vehiculos = require('../models/vehiculos');
 const Validator = require('fastest-validator');
