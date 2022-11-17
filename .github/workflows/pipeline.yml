@@ -16,7 +16,9 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies
-        run: npm install -g
+        run: npm install --save
+      - name: Lint
+        run: npm run eslint
       - name: Build
         run: npm run Build
       - name: Test
