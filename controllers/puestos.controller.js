@@ -36,6 +36,7 @@ function update(req, res){
     index:index,
     update:update
 }*/
+// eslint-disable-next-line no-undef
 module.exports = {
     index:index,
     update:update

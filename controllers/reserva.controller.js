@@ -1,6 +1,4 @@
-const { where } = require('sequelize');
 const models = require('../models');
-const reserva = require('../models/reserva');
 
 function save(req, res){
     const post = {
@@ -27,7 +25,7 @@ function save(req, res){
                     });
                 }else{
                     //Marca el estado del puesto como ocupado 
-                    models.puestos.update(status, {where:{id:req.body.IdPuesto}}).then(result =>{
+                    models.puestos.update(status, {where:{id:req.body.IdPuesto}}).then(() =>{
                         //Crea la reserva 
                         models.Reserva.create(post).then(result =>{
                             res.status(201).json({
@@ -73,16 +71,7 @@ models.Reserva.findAll({where:{IdUsuario:req.params.IdUsuario}}).then(result =>{
 });
 }
 
-function index(req, res){
-    models.Reserva.findAll().then(result=>{
-        res.status(200).json(result);
-    }).catch(error =>{
-        res.status(500).json({
-            message: "error",
-            error:error
-        });
-    });
-}
+
 
 function update(req, res){
     const id = req.params.id;
@@ -94,7 +83,7 @@ function update(req, res){
         IdUsuario: req.body.IdUsuario
     }
     const userId = req.body.IdUsuario;
-    models.Reserva.update(updatedReserva, {where:{id:id, IdUsuario: userId}}).then(result=>{
+    models.Reserva.update(updatedReserva, {where:{id:id, IdUsuario: userId}}).then(()=>{
         res.status(200).json({
             message:"Actualizado",
             post: updatedReserva
@@ -116,7 +105,7 @@ function destroy(req, res){
                     IdZonaParqueo: 1
                     }   
                     //Marca el puesto como disponible
-    models.puestos.update(status1, {where:{id:req.body.IdPuesto}}).then(result =>{
+    models.puestos.update(status1, {where:{id:req.body.IdPuesto}}).then(() =>{
         //Cancela la reserva
     models.Reserva.destroy({where:{id:id, IdUsuario:IdUsuario}}).then(result =>{
         res.status(200).json({
@@ -135,7 +124,7 @@ function destroy(req, res){
 module.exports = {
     save: save,
     show: show,
-    index: index,
+
     update: update,
     destroy:destroy
 }

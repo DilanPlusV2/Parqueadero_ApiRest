@@ -1,0 +1,23 @@
+{
+    "plugins": [
+        "jest"
+    ],
+    "parserOptions": { 
+      "ecmaVersion": 2022
+    },
+    "env": { 
+      "browser":true,
+      "es6": true, 
+      "jest/globals": true,
+      "node": true
+    }, 
+    "parser": "babel-eslint", 
+    "rules": { 
+      "no-console": "warn", 
+      "no-use-before-define": "warn", 
+      "spaced-comment": "warn" 
+    }, 
+    "extends": [ 
+      "standard", "eslint:recommended", "plugin:jest/recommended"
+    ]
+  } 

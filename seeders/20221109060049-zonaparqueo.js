@@ -2,6 +2,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
+  // eslint-disable-next-line no-unused-vars
   async up (queryInterface, Sequelize) {
     return queryInterface.bulkInsert('zonaparqueo', [
       {
@@ -13,6 +14,7 @@ module.exports = {
     ]);
   },
 
+  // eslint-disable-next-line no-unused-vars
   async down (queryInterface, Sequelize) {
     return queryInterface.bulkDelete('zonaparqueo',{},null);
   }

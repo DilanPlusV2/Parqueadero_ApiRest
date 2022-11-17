@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const models = require('../models');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');

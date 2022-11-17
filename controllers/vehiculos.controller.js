@@ -1,6 +1,4 @@
-const models = require('../models');
-const vehiculos = require('../models/vehiculos');
-const Validator = require('fastest-validator');
+const models = require('../models')
 
 function save(req, res){
     const post = {
@@ -74,7 +72,7 @@ function update(req, res){
     models.vehiculos.update(updatedVehiculo, {where:{id:id, IdUsuario: userId}}).then(result=>{
         res.status(200).json({
             message:"Actualizado",
-            result: updatedVehiculo
+            result: result
         });
     }).catch(error=>{
         res.status(500).json({
