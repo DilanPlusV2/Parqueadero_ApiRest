@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm install -g
       - name: Lint
-        run: npm run eslint
+        run: sud npm run eslint
       - name: Build
         run: npm run Build
       - name: Test
