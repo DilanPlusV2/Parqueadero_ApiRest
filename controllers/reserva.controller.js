@@ -71,7 +71,16 @@ models.Reserva.findAll({where:{IdUsuario:req.params.IdUsuario}}).then(result =>{
 });
 }
 
-
+function index(req, res){
+    models.Reserva.findAll().then(result=>{
+        res.status(200).json(result);
+    }).catch(error =>{
+        res.status(500).json({
+            message: "error",
+            error:error
+        });
+    });
+}
 
 function update(req, res){
     const id = req.params.id;
@@ -124,7 +133,7 @@ function destroy(req, res){
 module.exports = {
     save: save,
     show: show,
-
+    index: index,
     update: update,
     destroy:destroy
 }

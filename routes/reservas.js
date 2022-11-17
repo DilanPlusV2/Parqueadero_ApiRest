@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post("/",reservaController.save);
 router.get("/:IdUsuario",reservaController.show);
-
+router.get("/",reservaController.index);
 router.put("/:id",reservaController.update);
 router.delete("/:id",reservaController.destroy);
 
